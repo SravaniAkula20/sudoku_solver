@@ -1,0 +1,167 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f4f9;
+    color: #202b40;
+}
+
+.container {
+    max-width: 950px;
+    width: 94%;
+    margin: 35px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+    color: #263b70;
+}
+
+header p {
+    color: #687386;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 540px) minmax(220px, 1fr);
+    gap: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+    aspect-ratio: 1;
+    border: 2px solid #263b70;
+}
+
+.cell {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1;
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 22px);
+    border: 0;
+    border-right: 1px solid #cbd2df;
+    border-bottom: 1px solid #cbd2df;
+    outline: none;
+    color: #263b70;
+    padding: 0;
+}
+
+.cell:focus {
+    background: #e7edff;
+    box-shadow: inset 0 0 0 2px #3157d5;
+}
+
+.cell:nth-child(3n) {
+    border-right: 2px solid #263b70;
+}
+
+.cell:nth-child(9n) {
+    border-right: 0;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #263b70;
+}
+
+.given {
+    background: #edf0f5;
+    font-weight: bold;
+}
+
+.solved {
+    background: #eaf0ff;
+    color: #3157d5;
+    font-weight: bold;
+}
+
+.invalid {
+    background: #ffe2df;
+    color: #b42318;
+}
+
+.controls h2 {
+    margin-top: 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: none;
+    border-radius: 7px;
+    background: #e8edff;
+    color: #2446b6;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button.primary {
+    background: #3157d5;
+    color: white;
+}
+
+#status {
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 7px;
+    background: #f1f4f9;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#status.success {
+    background: #e5f6eb;
+    color: #17663a;
+}
+
+#status.error {
+    background: #fff0ef;
+    color: #a32920;
+}
+
+.instructions {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #687386;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    color: #8992a2;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}

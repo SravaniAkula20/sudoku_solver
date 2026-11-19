@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sudoku Solver</h1>
+            <p>Solve Sudoku puzzles using the Backtracking Algorithm</p>
+        </header>
+
+        <div class="main-content">
+
+            <div id="board" class="board"></div>
+
+            <div class="controls">
+                <h2>Sudoku Controls</h2>
+
+                <!-- Difficulty Selection -->
+                <label for="difficulty">Select Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <!-- Sudoku Buttons -->
+                <button id="generateBtn">Generate New Puzzle</button>
+                <button id="solve" class="primary">Solve Sudoku</button>
+                <button id="check">Check Entries</button>
+                <button id="example">Load Example</button>
+                <button id="clear">Clear Board</button>
+
+                <p id="status">Ready to solve!</p>
+
+                <div class="instructions">
+                    <h3>How to play</h3>
+                    <ol>
+                        <li>Select a difficulty level.</li>
+                        <li>Click Generate New Puzzle.</li>
+                        <li>Enter numbers from 1 to 9.</li>
+                        <li>Each row must contain unique numbers.</li>
+                        <li>Each column must contain unique numbers.</li>
+                        <li>Each 3×3 box must contain unique numbers.</li>
+                        <li>Click Solve Sudoku to see the solution.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            Built using HTML, CSS, JavaScript and Backtracking
+        </footer>
+    </div>
+
+    <script src="js/solver.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
